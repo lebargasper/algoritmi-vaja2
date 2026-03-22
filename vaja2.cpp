@@ -30,6 +30,14 @@ void Izpis_Stevil(const vector<unsigned char> &polje) {
     output.close();
 }
 
+void countingSortByBit(std::vector<unsigned char> &A, int k) {
+
+}
+
+void binaryRadixSort(std::vector<unsigned char> &A) {
+
+}
+
 int main() {
 	return 0;
 }
