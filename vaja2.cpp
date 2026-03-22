@@ -59,6 +59,14 @@ void binaryRadixSort(std::vector<unsigned char> &A) {
     }
 }
 
-int main() {
+int main(int argc, const char* argv[]) {
+	vector<unsigned char> A;
+
+	if (argc < 2) return 0;
+	if (!Branje_Stevil(A, argv[1])) return 0;
+
+    binaryRadixSort(A);
+	Izpis_Stevil(A);
+
 	return 0;
 }
