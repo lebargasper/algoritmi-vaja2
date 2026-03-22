@@ -18,6 +18,10 @@ bool Branje_Stevil(vector<unsigned char> &vec, const char s[]) {
 	return true;
 }
 
+void Izpis_Stevil(const vector<unsigned char> &polje) {
+
+}
+
 int main() {
 	return 0;
 }
