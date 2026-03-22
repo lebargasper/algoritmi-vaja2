@@ -30,6 +30,35 @@ void Izpis_Stevil(const vector<unsigned char> &polje) {
     output.close();
 }
 
+void countingSortByBit(std::vector<unsigned char> &A, int k) {
+    int n = A.size();
+    std::vector<unsigned char> output(n);
+    int count[2] = {0, 0};
+
+    for (int i = 0; i < n; i++) {
+        int bit = (A[i] >> k) & 1;
+        count[bit]++;
+    }
+
+    count[1] += count[0];
+
+    for (int i = n - 1; i >= 0; i--) {
+        int bit = (A[i] >> k) & 1;
+        output[count[bit] - 1] = A[i];
+        count[bit]--;
+    }
+
+    for (int i = 0; i < n; i++) {
+        A[i] = output[i];
+    }
+}
+
+void binaryRadixSort(std::vector<unsigned char> &A) {
+    for (int k = 0; k < 8; k++) {
+        countingSortByBit(A, k);
+    }
+}
+
 int main() {
 	return 0;
 }
